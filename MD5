@@ -1,4 +1,4 @@
-47a914389814b2832d476599220736b2 *DESCRIPTION
+448d6b195a7b8c6638186d146fcc6cad *DESCRIPTION
 dd5fce13b4161f46aaa0285bc44ef6b7 *LICENSE
 b1be683819b3218cdcbc3ea5b6984521 *NAMESPACE
 6d5249be463ee9ae313f493b3ab908b1 *R/open_dashboard.R
@@ -6,10 +6,11 @@ eb910de1b209f6c8fd10b57a14ba7ba8 *R/plot.R
 a724361e3a1dd660f17631af01f45a84 *R/print.R
 833dbe4d421c99f530cb627966bb24c3 *R/query.R
 632a354f83fd6337c8dc82f626609c00 *R/utilities.R
-b4d3b8577ef4ea505970b9540a1f17b7 *build/vignette.rds
+fb77065546a2663a65ce40cec6990b79 *build/vignette.rds
+f60cc59e38d546aed6ed9bde13d79d6e *inst/CITATION
 0d9e5f19133db2505ab4ab13c9ab5d06 *inst/doc/nCov2019.R
-62174aceeeec4c6fd5f5e2e33af5aefd *inst/doc/nCov2019.Rmd
-71ce0953f1d9bd5d7ab5ec50df050c68 *inst/doc/nCov2019.html
+013fb29c9b3e2230f241feb23e0b0399 *inst/doc/nCov2019.Rmd
+6a3ef42ff7bb4890ae32b730691c1b7b *inst/doc/nCov2019.html
 67a0c014f735471ac7d484809e079e2c *inst/local_storage/global_data.json.gz
 1a7acd7bd69d00ef2a2b295e5dc1fabc *inst/local_storage/historical_data.json.gz
 2a44dcf289847587344d296c1ead76dc *inst/local_storage/lastest_data.json.gz
@@ -30,4 +31,4 @@ e68bb2bdc08d16b165eae026e2722dbc *man/query.Rd
 ab46f93a5a8ca081497f0694f1f879c8 *vignettes/Animations.png
 d58db664ca91da9d556c23ba35a3c1c7 *vignettes/dashboard.png
 f2748d6494ef592b72d4d27e11b080a8 *vignettes/introduction.png
-62174aceeeec4c6fd5f5e2e33af5aefd *vignettes/nCov2019.Rmd
+013fb29c9b3e2230f241feb23e0b0399 *vignettes/nCov2019.Rmd
