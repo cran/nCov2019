@@ -54,8 +54,8 @@ names(res)
 - `global`    The global overall summary statistic  
 - `latest`   The global latest statistic for all countries
 - `historical`    The historical statistic for all countries
-- `vaccine`   The current vaccine development progress
-- `therapeutics`    The current therapeutics development progress
+- ~~`vaccine`   The current vaccine development progress~~
+- ~~`therapeutics`    The current therapeutics development progress~~
 
 The `query()` only need to be performed once in a session, print each of statistic objects, users could get their update time. And for the `vaccine` and `therapeutics` query results, print them will return the candidates number.
 
@@ -133,7 +133,7 @@ head(Z["Global"])
 ```
 
 
-
+<div style="display:none">
 ### Vaccine and therapeutics data
 
 Users could check for the vaccine or therapeutics developing status.  Let x be the vaccine or therapeutics query result, then `summary()` will return the summary of their trial phase, and x["all"] or x["All"] will return the summary information, such as mechanism,  trial Phase, institutions and so on. Then the detail background info will return with provided id, for example x[ID="id3"] or simple as x["id3"].  The same operation could apply to therapeutics data.
@@ -153,7 +153,7 @@ summary(X)
 head(X["All"])
 X[ID="id1"] 
 ```
-
+</div>
 
 ## Visualization
 
@@ -172,10 +172,11 @@ We provide a visualization function as a redesign "plot".
        ...
      )
 
-Here, type could be one of "cases","deaths","recovered","active","todayCases","todayDeaths","todayRecovered","population" and "tests". By default, color palette is "Reds", more color palettes can be found here: [palette](https://www.r-graph-gallery.com/38-rcolorbrewers-palettes.html)
+Here, type could be one of "cases","deaths","recovered","active","todayCases","todayDeaths","todayRecovered","population" and "tests". By default, color palette is "Reds", more color palettes can be found here: [palette](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html).
+
 
 To get the overview for the latest status, the mini code required is as below:
-```{r fig.height=8, fig.width=12, warning=FALSE}
+```{r fig.height=8, fig.width=12, dpi=50, arning=FALSE}
 X <- res$latest
 plot(X)
 ```
@@ -183,14 +184,14 @@ plot(X)
 
 
 Or To get the overview for the detection testing status, 
-```{r fig.height=8, fig.width=12, warning=FALSE}
+```{r fig.height=8, fig.width=12, dpi=50,warning=FALSE}
 plot(X, type="tests",palette="Green")
 ```
 
 
 
 It could be also intuitively compare the number of new confirmed cases per day among different countries.
-```{r fig.height=8, fig.width=12, warning=FALSE}
+```{r fig.height=8, fig.width=12, dpi=50,warning=FALSE}
 library(ggplot2)
 library(dplyr)
 X <- res$historical
@@ -209,7 +210,7 @@ ggplot(tmp,aes(date, log(diff+1), color=country)) + geom_line() +
 
 
 user could also plot the outbreak map on the past time with historical data by specify a date in function plot().
-```{r fig.height=8, fig.width=12, warning=FALSE}
+```{r fig.height=8, fig.width=12, dpi=50,warning=FALSE}
 Y <- res$historical
 plot(Y, region="Global" ,date = "2020-08-01", type="cases")
 ```
@@ -238,7 +239,7 @@ plot(y, from = from, to=to)
 
 If you wanted to visualize the cumulative summary data, an example plot could be the following:
 
-```{r fig.height=8, fig.width=12, warning=FALSE}
+```{r fig.height=8, fig.width=12, dpi=50,warning=FALSE}
 library(ggplot2)
 x <- res$historical
 d = x['Japan' ] # you can replace Anhui with any province
@@ -255,7 +256,7 @@ ggplot(d,
 ```
 
 Plot  the trend for for the Top 10  increase cases countries on last day
-```{r fig.height=8, fig.width=10, warning=FALSE}
+```{r fig.height=8, fig.width=10, dpi=50,warning=FALSE}
 library("dplyr")
 library("ggrepel")
 
@@ -304,7 +305,7 @@ ggplot(d, aes(date, count, color = curve)) + geom_point() + geom_line() +
 ## Heatmap for cases per country
 
 Here is the example code for draw a heatmap for the historical data range in nCov2019.
-```{r fig.height=15, fig.width=6, warning=FALSE}
+```{r fig.height=15, fig.width=6, dpi=50,warning=FALSE}
 library('tidyr')
 library('ggrepel')
 library('ggplot2')
@@ -333,7 +334,7 @@ ggplot(d, aes(date, country)) +
 ```
 
 Plot the global trend in a novel way.
-```{r fig.height=10, fig.width=10, warning=FALSE}
+```{r fig.height=10, fig.width=10, dpi=50,warning=FALSE}
 
 require(dplyr)
 
@@ -373,7 +374,7 @@ p
 
 
 Number of days since 1 million cases per country 
-```{r fig.height=8, fig.width=12, warning=FALSE}
+```{r fig.height=8, fig.width=12, dpi=50,warning=FALSE}
 require(dplyr)
 require(ggplot2)
 require(shadowtext)
@@ -473,3 +474,4 @@ Wu T, Hu E, Ge X<sup>\*</sup>, Yu G<sup>\*</sup>. 2021. nCov2019: an R package f
 ```{r}
 sessionInfo()
 ```
+

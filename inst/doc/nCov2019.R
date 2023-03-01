@@ -63,14 +63,14 @@ summary(X)
 head(X["All"])
 X[ID="id1"] 
 
-## ----fig.height=8, fig.width=12, warning=FALSE--------------------------------
+## ----fig.height=8, fig.width=12, dpi=50, arning=FALSE-------------------------
 X <- res$latest
 plot(X)
 
-## ----fig.height=8, fig.width=12, warning=FALSE--------------------------------
+## ----fig.height=8, fig.width=12, dpi=50,warning=FALSE-------------------------
 plot(X, type="tests",palette="Green")
 
-## ----fig.height=8, fig.width=12, warning=FALSE--------------------------------
+## ----fig.height=8, fig.width=12, dpi=50,warning=FALSE-------------------------
 library(ggplot2)
 library(dplyr)
 X <- res$historical
@@ -86,7 +86,7 @@ ggplot(tmp,aes(date, log(diff+1), color=country)) + geom_line() +
   scale_x_date(date_labels = "%Y-%m-%d") + 
   theme_minimal()
 
-## ----fig.height=8, fig.width=12, warning=FALSE--------------------------------
+## ----fig.height=8, fig.width=12, dpi=50,warning=FALSE-------------------------
 Y <- res$historical
 plot(Y, region="Global" ,date = "2020-08-01", type="cases")
 
@@ -98,7 +98,7 @@ plot(Y, region="Global" ,date = "2020-08-01", type="cases")
 #  y = res$historical
 #  plot(y, from = from, to=to)
 
-## ----fig.height=8, fig.width=12, warning=FALSE--------------------------------
+## ----fig.height=8, fig.width=12, dpi=50,warning=FALSE-------------------------
 library(ggplot2)
 x <- res$historical
 d = x['Japan' ] # you can replace Anhui with any province
@@ -113,7 +113,7 @@ ggplot(d,
   labs(caption = paste("accessed date:", max(d$date)))
 
 
-## ----fig.height=8, fig.width=10, warning=FALSE--------------------------------
+## ----fig.height=8, fig.width=10, dpi=50,warning=FALSE-------------------------
 library("dplyr")
 library("ggrepel")
 
@@ -156,7 +156,7 @@ ggplot(d, aes(date, count, color = curve)) + geom_point() + geom_line() +
         axis.text = element_text(angle = 15, hjust = 1)) +
   scale_x_date(date_labels = "%Y-%m-%d")
 
-## ----fig.height=15, fig.width=6, warning=FALSE--------------------------------
+## ----fig.height=15, fig.width=6, dpi=50,warning=FALSE-------------------------
 library('tidyr')
 library('ggrepel')
 library('ggplot2')
@@ -183,7 +183,7 @@ ggplot(d, aes(date, country)) +
   scale_x_date(date_labels = "%Y-%m-%d") + theme_minimal()
 
 
-## ----fig.height=10, fig.width=10, warning=FALSE-------------------------------
+## ----fig.height=10, fig.width=10, dpi=50,warning=FALSE------------------------
 
 require(dplyr)
 
@@ -220,7 +220,7 @@ p <- ggplot(dd, aes(country, cases, fill=cases)) +
     ggtitle("COVID19 global trend", time)
 p
 
-## ----fig.height=8, fig.width=12, warning=FALSE--------------------------------
+## ----fig.height=8, fig.width=12, dpi=50,warning=FALSE-------------------------
 require(dplyr)
 require(ggplot2)
 require(shadowtext)
